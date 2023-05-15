@@ -1,0 +1,24 @@
+{% extends 'flatpages/default.html' %}
+
+
+{% block title %}
+Post
+{% endblock title %}
+
+{% block content %}
+<h1>{{ post.title }}</h1>
+<h2>{{ post.content|safe }}</h2>
+<hr>
+
+<h1>Отклик на объявлние</h1>
+<hr>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+
+
+{% endblock content %}
+
+<!--<a href="{{ post.pk}}/response/ ">Откликнуться</a>-->
